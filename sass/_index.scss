@@ -1,0 +1,182 @@
+//Mapa colores
+$colores: (
+negro: #222722 ,
+rojo: #cf3b37 ,
+grisoscuro: #8c9b97 ,
+grisclaro: #edefed ,
+verde: #539676 ,
+marrón: #a97f65 ,
+rojoclaro: #d69690 ,
+grismedio: #bac5c2 ,
+blanco: #ffff,
+);
+
+/*Variables*/
+$h1-titulos: bold 3.5rem 'Montserrat';
+$h1-color: map-get($map: $colores, $key:grisclaro );
+$h2-titulos: 2.5rem ;
+$h2-color: map-get($map: $colores, $key: negro);
+$h1-shadow: map-get($map: $colores, $key: grisoscuro) 2px 2px;
+$h2-shadow: map-get($map: $colores, $key: verde) 2px 2px;
+$parrafos: 1.25rem;
+
+.maincontainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        font: $h1-titulos;
+        color: $h1-color;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: 30%;
+        padding-right: 10%;
+        text-shadow: $h1-shadow;
+        height: 100%;
+        text-align: right;
+    }
+    p{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        color: map-get($map: $colores, $key: blanco);
+        font-size: $parrafos;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-right: 20%;
+        height: 100%;
+        text-align: left;
+    }
+    .mainimg__container{
+        grid-column: 1/3;
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    .mainimg{
+        max-width: 40%;
+        border-radius: 5%;
+        border: map-get($map: $colores, $key: blanco) 5px solid;
+        }
+    }
+}
+
+.sponsorscontainer{
+    background-color: map-get($map: $colores, $key: blanco);
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h2{
+        padding-bottom: 40px;
+        color: $h2-color;
+        font-family: 'Rajdhani', sans-serif;
+        font-size: $h2-titulos;
+        font-weight: 700;
+        text-shadow: $h2-shadow;
+        text-align: center;
+        text-decoration: underline;
+    }
+    .sponsorsimgcontainer{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        .sponsorsimg{
+            width: 15rem;
+        }
+    }
+}
+
+.videocontainer{
+    max-width: 1080px;
+    margin: auto;
+}
+    .videocontainer-vid{
+        height: 0px;
+        width: 100%;
+        padding-top: 56.25%;
+        position: relative;}
+
+        iframe{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        }
+
+@media screen and (max-width: 1100px){
+    .maincontainer{
+        h1{
+            padding-left: 30%;
+        }
+        p{
+            padding-right: 10%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px){
+    .maincontainer{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        h1{
+            grid-column: 1/2;
+            grid-row: 1/2;
+            text-align: center;
+            padding: 0px;
+            width: 100%;
+            justify-content: center;
+        }
+        p{
+            grid-column: 1/2;
+            grid-row: 2/3;
+            padding-right: 3%;
+            padding-left: 3%;
+            justify-content: center;
+            text-align: center;
+        }
+        .mainimg__container{
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            .mainimg{
+                max-width: 80%;
+                margin-bottom: 20px ;
+                    }
+
+        }
+}
+}
+
+@media screen and (max-width: 600px){
+    .mainimg__container{
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    .mainimg{
+        max-width: 80%;
+        border-radius: 0;
+            }
+    }
+}

@@ -1,0 +1,110 @@
+//Mapa colores
+$colores: (
+negro: #0000,
+negroclaro: #222722 ,
+rojo: #cf3b37 ,
+grisoscuro: #8c9b97 ,
+grisclaro: #edefed ,
+verde: #539676 ,
+marrón: #a97f65 ,
+rojoclaro: #d69690 ,
+grismedio: #bac5c2 ,
+blanco: #ffff,
+);
+
+/*Variables*/
+$h1-titulos: bold 3.5rem 'Montserrat';
+$h1-titulosquery: bold 3rem 'Montserrat';
+$h1-spacing-bottom: 20px;
+$h1-color: map-get($map: $colores, $key:grisclaro );
+$h2-titulos: 2.5rem ;
+$h2-color: map-get($map: $colores, $key: negro);
+$h1-shadow: map-get($map: $colores, $key: grisoscuro) 2px 2px;
+$h2-shadow: map-get($map: $colores, $key: verde) 2px 2px;
+$parrafos: 1.25rem;
+$parrafoschicos: 1rem;
+$bordercolor: map-get($map: $colores, $key:rojo );
+$h3-titulos: bold 1.75rem;
+$h3-color: map-get($map: $colores, $key: blanco );
+$h3-shadow: map-get($map: $colores, $key: rojo) 2px 2px;
+
+.noticiascontainer{
+    @extend .escuderiacontainer;
+}
+
+.titulopaginanoticias{
+    @extend .titulopaginaescuderia;
+}
+
+.noticias{
+    width: 90%;
+    height: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.noticiasarticle{
+    border: 5px solid map-get($map: $colores, $key: rojo);
+    border-radius: 20px;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    margin: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: map-get($map: $colores, $key: grisclaro);
+}
+
+.noticiasimg{
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.noticiastitle{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.noticiasp{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.botonnoticias{margin-top: 40px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: map-get($map: $colores, $key: rojo);
+    color:  map-get($map: $colores, $key: blanco);
+    border: 2px solid map-get($map: $colores, $key: negro);
+    border-radius: 20px;
+        &:hover{
+            background-color: map-get($map: $colores, $key: blanco);
+            color:  map-get($map: $colores, $key: rojo);
+            border: 2px solid map-get($map: $colores, $key: grismedio);
+            font-weight: 700;
+        }
+}
+
+@media screen and (max-width:600px){
+    .titulopaginacontacto{
+        font: $h1-titulosquery;
+    }
+}
+
+@media screen and (max-width:900px){
+    .noticiasarticle{
+        width: 90%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,62 @@
+//Mapa colores
+$colores: (
+negro: #0000,
+negroclaro: #222722 ,
+rojo: #cf3b37 ,
+grisoscuro: #8c9b97 ,
+grisclaro: #edefed ,
+verde: #539676 ,
+marrón: #a97f65 ,
+rojoclaro: #d69690 ,
+grismedio: #bac5c2 ,
+blanco: #ffff,
+);
+
+/*Variables*/
+$h1-titulos: bold 3.5rem 'Montserrat';
+$h1-titulosquery: bold 3rem 'Montserrat';
+$h1-spacing-bottom: 20px;
+$h1-color: map-get($map: $colores, $key:grisclaro );
+$h2-titulos: 2.5rem ;
+$h2-color: map-get($map: $colores, $key: negro);
+$h1-shadow: map-get($map: $colores, $key: grisoscuro) 2px 2px;
+$h2-shadow: map-get($map: $colores, $key: verde) 2px 2px;
+$parrafos: 1.25rem;
+$parrafoschicos: 1rem;
+$bordercolor: map-get($map: $colores, $key:rojo );
+$h3-titulos: bold 1.75rem;
+$h3-color: map-get($map: $colores, $key: blanco );
+$h3-shadow: map-get($map: $colores, $key: rojo) 2px 2px;
+
+@import "header";
+@import "index";
+@import "footer";
+@import "escuderia";
+@import "pilotos";
+@import "contacto";
+@import "noticias";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../assets/background/asfalt.png);
+}
+
+img{
+    max-width: 100%;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+}

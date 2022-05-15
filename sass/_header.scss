@@ -1,0 +1,94 @@
+//Mapa colores
+$colores: (
+negro: #222722 ,
+rojo: #cf3b37 ,
+grisoscuro: #8c9b97 ,
+grisclaro: #edefed ,
+verde: #539676 ,
+marrón: #a97f65 ,
+rojoclaro: #d69690 ,
+grismedio: #bac5c2 ,
+blanco: #ffff,
+);
+
+/*Variables*/
+$h1-titulos: bold 3.5rem 'Montserrat';
+$h1-color: map-get($map: $colores, $key:grisclaro );
+$h2-titulos: 2.5rem 'Rajdhani', sans-serif;
+$h2-color: map-get($map: $colores, $key: negro);
+$h1-shadow: map-get($map: $colores, $key: grisoscuro) 2px 2px;
+$h2-shadow: map-get($map: $colores, $key: verde) 2px 2px;
+$parrafos: 1.25rem;
+
+.logo{
+    width: 10rem;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav-link-header{
+    color: map-get($map: $colores, $key:negro );
+    font-weight: 500;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    &:hover{
+        color: map-get($map: $colores, $key:rojo );
+        font-weight: 700;
+    }
+    &:active{
+        font-weight: 400;
+        color: map-get($map: $colores, $key: rojo);
+    }
+}
+
+.nav-item{
+    text-align: end;
+    padding: .5rem ;
+}
+
+
+.socialicons__container{
+    display: flex;
+    height: 100%;
+    width: 10%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    
+}
+
+.socialicons{
+    width: 30px;
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+.banner__img{
+    width: max-content;
+}
+
+@media screen and (max-width:991px){
+    .socialicons__container{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-content: center;
+        .socialicons{
+            width: 50px;
+            padding-right: 20px;
+        }
+    }
+}
