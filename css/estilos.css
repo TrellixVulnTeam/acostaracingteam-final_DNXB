@@ -37,7 +37,11 @@
   align-content: center; }
 
 .socialicons {
-  width: 30px; }
+  box-shadow: 5px 5px 5px 0px #bac5c2;
+  width: 35px;
+  transition: 0.2s; }
+  .socialicons:hover {
+    transform: translateY(3px) scale(1.02); }
 
 .banner {
   width: 100%;
@@ -263,6 +267,68 @@ iframe {
       font-size: 12px;
       font-weight: 100; }
 
+.logo__footer {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both; }
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; } }
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; } }
+
 @media screen and (max-width: 600px) {
   .diseño {
     height: 4rem;
@@ -309,7 +375,7 @@ iframe {
     flex-direction: column;
     flex-wrap: wrap;
     padding: 20px;
-    margin: 20px 0px; }
+    justify-content: space-evenly; }
     .escuderiainfo .escuderiainfo__text h2 {
       font-size: 2.5rem;
       color: white;
@@ -331,13 +397,17 @@ iframe {
 .listatitulos {
   width: 100%;
   padding: 0%;
-  column-count: 2; }
-
-.titulos {
-  text-align: center;
-  font-size: 1rem;
-  color: #ffff;
-  line-height: 2; }
+  column-count: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .listatitulos .titulos {
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
+    color: #ffff;
+    line-height: 2; }
 
 .escuderia__img {
   border-radius: 20px;
@@ -366,27 +436,18 @@ iframe {
       justify-content: center;
       width: 100%; } }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .titulopaginaescuderia, .titulopaginanoticias {
     font: bold 3rem "Montserrat"; }
   .listatitulos {
     column-count: 1; }
+  .titulos {
+    width: 100%; }
   .escuderia__img {
     padding: 10%;
     border-radius: 20px; } }
 
 /*Variables*/
-.imgpilotos {
-  border-radius: 10% 50% 10% 50%;
-  max-width: 200px; }
-
-.titulopaginapilotos {
-  font: bold 3.5rem "Montserrat";
-  color: #edefed;
-  text-shadow: #8c9b97 2px 2px;
-  text-align: center;
-  margin-bottom: 20px; }
-
 .pilotoscontainer {
   display: flex;
   flex-direction: column;
@@ -394,28 +455,36 @@ iframe {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px; }
+  .pilotoscontainer .titulopaginapilotos {
+    font: bold 3.5rem "Montserrat";
+    color: #edefed;
+    text-shadow: #8c9b97 2px 2px;
+    text-align: center;
+    margin-bottom: 20px; }
+  .pilotoscontainer .pilotos {
+    border: 5px solid #cf3b37;
+    border-radius: 20px;
+    display: grid;
+    width: 90%;
+    height: 100%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px; }
+    .pilotoscontainer .pilotos .pilotosdatos {
+      grid-column: 1/2;
+      grid-row: 1/5;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 100%; }
 
-.pilotos {
-  border: 5px solid #cf3b37;
-  border-radius: 20px;
-  display: grid;
-  width: 90%;
-  height: 100%;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: repeat(4, auto);
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 20px; }
-
-.pilotosdatos {
-  grid-column: 1/2;
-  grid-row: 1/5;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%; }
+.imgpilotos {
+  border-radius: 10% 50% 10% 50%;
+  max-width: 200px; }
 
 .pilotos__lugarnacimiento {
   grid-column: 2/3;
@@ -546,34 +615,31 @@ iframe {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px; }
-
-.form {
-  width: 90%;
-  border: 5px solid #cf3b37;
-  border-radius: 20px;
-  padding: 2.5%; }
-
-.formlabel {
-  margin-bottom: 10px;
-  color: #ffff; }
-
-.botoncontacto {
-  margin-top: 40px;
-  padding: 10px;
-  width: 200px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #cf3b37;
-  color: #ffff;
-  border: 2px solid #0000;
-  border-radius: 20px; }
-  .botoncontacto:hover {
-    background-color: #ffff;
-    color: #cf3b37;
-    border: 2px solid #bac5c2;
-    font-weight: 700; }
+  .contactocontainer .form {
+    width: 90%;
+    border: 5px solid #cf3b37;
+    border-radius: 20px;
+    padding: 2.5%; }
+    .contactocontainer .form .formlabel {
+      margin-bottom: 10px;
+      color: #ffff; }
+    .contactocontainer .form .botoncontacto {
+      margin-top: 40px;
+      padding: 10px;
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #cf3b37;
+      color: #ffff;
+      border: 2px solid #0000;
+      border-radius: 20px; }
+      .contactocontainer .form .botoncontacto:hover {
+        background-color: #ffff;
+        color: #cf3b37;
+        border: 2px solid #bac5c2;
+        font-weight: 700; }
 
 @media screen and (max-width: 600px) {
   .titulopaginacontacto {
@@ -588,60 +654,65 @@ iframe {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center; }
+  .noticias .noticiasarticle {
+    border: 5px solid #cf3b37;
+    border-radius: 20px;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    margin: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #edefed; }
+    .noticias .noticiasarticle .noticiasimg {
+      border-radius: 20px;
+      margin-bottom: 20px;
+      height: 40%; }
+    .noticias .noticiasarticle .noticiastitle {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #000000;
+      font-size: 2.5rem;
+      text-shadow: #539676 2px 2px;
+      height: 20%; }
+    .noticias .noticiasarticle .noticiasp {
+      margin-bottom: 20px;
+      text-align: center;
+      height: 20%; }
+    .noticias .noticiasarticle .botonnoticias {
+      padding: 10px;
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #cf3b37;
+      color: #ffffff;
+      border: 2px solid #000000;
+      border-radius: 20px; }
+      .noticias .noticiasarticle .botonnoticias:hover {
+        background-color: #ffffff;
+        color: #cf3b37;
+        border: 2px solid #bac5c2;
+        font-weight: 700; }
 
-.noticiasarticle {
-  border: 5px solid #cf3b37;
-  border-radius: 20px;
-  width: 45%;
-  height: 100%;
-  overflow: hidden;
-  margin: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #edefed; }
-
-.noticiasimg {
-  border-radius: 20px;
-  margin-bottom: 20px; }
-
-.noticiastitle {
-  margin-bottom: 20px;
-  text-align: center; }
-
-.noticiasp {
-  margin-bottom: 20px;
-  text-align: center; }
-
-.botonnoticias {
-  margin-top: 40px;
-  padding: 10px;
-  width: 200px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #cf3b37;
-  color: #ffff;
-  border: 2px solid #0000;
-  border-radius: 20px; }
-  .botonnoticias:hover {
-    background-color: #ffff;
-    color: #cf3b37;
-    border: 2px solid #bac5c2;
-    font-weight: 700; }
+.buttoncontainer {
+  height: 10%; }
 
 @media screen and (max-width: 600px) {
-  .titulopaginacontacto {
+  .titulopaginanoticias {
     font: bold 3rem "Montserrat"; } }
 
 @media screen and (max-width: 900px) {
-  .noticiasarticle {
-    width: 90%;
-    height: 100%; } }
+  .noticias {
+    width: 100%; }
+    .noticias .noticiasarticle {
+      width: 90%;
+      height: 100%; } }
 
 * {
   padding: 0;
